@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ .chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #eee;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chat-log {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.message {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-input {
+  padding: 10px;
+}
+
+.chat-input input {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+  <div class="chat-log">
+    <div class="message">Welcome to the chat simulator!</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Type your message here...">
+    <button onclick="openChat()">Open Chat</button>
+  </div>
+</div>
+
+</body>
+<script>
+    function openChat() {
+  const chatContainer = document.createElement("div");
+  chatContainer.classList.add("chat-container");
+  chatContainer.innerHTML = `
+    <div class="chat-header">
+      <h3>Chat Simulator</h3>
+      <button onclick="closeChat()">Close</button>
+    </div>
+    <div class="chat-log">
+      <div class="message">Welcome to the chat simulator!</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Type your message here...">
+      <button>Send</button>
+    </div>
+  `;
+  document.body.appendChild(chatContainer);
+
+  const chatLog = chatContainer.querySelector(".chat-log");
+  const chatInput = chatContainer.querySelector(".chat-input input");
+  const chatButton = chatContainer.querySelector(".chat-input button");
+
+  chatButton.addEventListener("click", function () {
+    const message = chatInput.value;
+    if (message.trim() === "") {
+      return;
+    }
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message");
+    messageElement.textContent = message;
+    chatLog.appendChild(messageElement);
+    chatInput.value = "";
+  });
+}
+
+function closeChat() {
+  const chatContainer = document.querySelector(".chat-container");
+  chatContainer.remove();
+}
+
+</script>
+</html>

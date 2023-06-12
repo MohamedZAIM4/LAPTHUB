@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVBAR</title>
+    <link rel="stylesheet" href="./css/style1.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+ <style>
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: ""; /*empty to just make under line for more details see the MDN documentation*/
+  width: 30%;
+  height: 2px;
+  background: #FF6F61;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+#navbar li a:hover,
+#navbar li a.active {
+  color: #FF6F61;
+}
+
+
+ </style>
+  </head>
+  <body>
+    <!-- 1 -->
+
+    <nav id="header">
+      <a href="#" ><img src="Assets/hmy.png"style="height:80px;padding:0;margin:0;" alt="LOGO" class="logo" /></a>
+      <div>
+        <ul id="navbar">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="soon.html">soon1</a></li>
+          <li><a href="sonn2.html">soon2</a></li>
+          <li><a href="AboutUs.html">About us</a></li>
+        </ul>
+      </div>
+    </nav>
+<div class="nav2">
+      <div class="container2">
+        <ul class="nav2ul">
+          <li id="nonactive" ><a  href="index.html">Home</a></li>
+          <li id="nonactive" ><a href="soon.html">soon1</a></li>
+          <li id="active3" ><a href="sonn2.html">soon2</a></li>
+                    <li id="nonactive"><a href="AboutUs.html">About us</a></li>
+          <li id="nonactive"><a href="AboutUs.html">About us</a></li>
+        </ul>
+      </div>
+    </div>
+        <section>
+<div class="background">
+  <img src="Assets/wave-haikei33.png"></img>
+</div>
+</section>
+  <!-- <section>
+    <div>
+
+    </div>
+  </section> -->
+     <!-- <div class="vertical_menu">
+        <div class="item">Click Me</div>
+        <div class="item">Click Me</div>
+        <div class="item">Click Me</div>
+        <div class="item">Click Me</div>
+    -->
+    <!--  1  -->
+    <script src="./javascript/script1.js"></script>
+  </body>
+</html>
